@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import imageUrlBuilder from '@sanity/image-url'
 import { client } from '@/../sanity/lib/client'
 
-export const getProductDetail = async (id:number) => {
+const getProductDetail = async (id:number) => {
     const res = await client.fetch(`*[_type=='product' && id == "${id}"]`)
     return res
 }

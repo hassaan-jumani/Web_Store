@@ -1,5 +1,5 @@
 import ProductCart from "@/components/layout/ProductCart"
-import { products } from "@/utils/mock"
+// import { products } from "@/utils/mock"
 import { Product } from '@/utils/type'
 import { client } from '@/../sanity/lib/client'
 

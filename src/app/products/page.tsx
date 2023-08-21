@@ -1,18 +1,18 @@
-import { products } from "@/utils/mock"
 import ProductCart from "@/components/layout/ProductCart"
 import {Product} from '@/utils/type'
 import {client} from '@/../sanity/lib/client'
 
 
-export const getProductData = async () => {
-  const res = await client.fetch(`*[_type=='product']`)
+const getProductData = () => {
+  const res:any = client.fetch(`*[_type=='product']`)
   return res
 }
 
 
 const AllProducts = async () => {
-  
-  const data:Product[] = await getProductData()
+  const data:Product[] = []
+  data.push(await getProductData())
+  // const data:Product[] = await getProductData()
   console.log(data)
 
   return (
