@@ -48,7 +48,7 @@ export default async function Page({ params }: { params: { id: number } }) {
                                     {/* Select Sizes */}
                                     {sizes.map((size) => {
                                         return (
-                                            <div>
+                                            <div key={params.id}>
                                                 <Button className="w-12 h-12 border duration-300 mt-2 hover:shadow-xl flex justify-center items-center rounded-full text-gray-500 bg-white ">{size}</Button>
                                             </div>
                                         )
