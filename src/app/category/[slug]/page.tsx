@@ -1,5 +1,4 @@
 import ProductCart from "@/components/layout/ProductCart"
-import { StaticImageData } from "next/image"
 import { Product } from '@/utils/type'
 import { client } from '@/../sanity/lib/client'
 
@@ -8,10 +7,15 @@ const getProductsCategory = async (category:string) => {
     return res
 }
 
+// export async function getProductsCategory({ params }: { params: { category: string } }) {
+//     const res = await client.fetch(`*[_type=='product' && category == "${params.category}"]`)
+//     return res
+// }
+
+
 export default async function Page({ params }: { params: { slug: string } }) {
 
     const data: Product[] = await getProductsCategory(params.slug)
-    // const result = getProductsCategory(params.slug)
     return (
         <div className="flex justify-evenly mt-16 py-10 flex-wrap">
             {data.length > 0 ? data.map((list) => (
