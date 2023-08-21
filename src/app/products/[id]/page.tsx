@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: { id: number } }) {
         <div className="flex mt-16 py-16 flex-wrap px-16 bg-gray-50">
             {
                 data.map((product) => (
-                    <div key={product.id}>
+                    <div key={params.id}>
                         <div className="flex justify-between gap-6 mb-16">
                             {/* Left hand Side */}
                             <div>
