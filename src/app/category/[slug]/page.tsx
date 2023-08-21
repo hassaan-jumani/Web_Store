@@ -3,14 +3,10 @@ import { StaticImageData } from "next/image"
 import { Product } from '@/utils/type'
 import { client } from '@/../sanity/lib/client'
 
-export const getProductsCategory = async (category:string) => {
+const getProductsCategory = async (category:string) => {
     const res = await client.fetch(`*[_type=='product' && category == "${category}"]`)
     return res
 }
-
-// const getProductsCategory = (category:string) => {
-//     return products.filter((product) => product.category === category)
-// }
 
 export default async function Page({ params }: { params: { slug: string } }) {
 
