@@ -27,8 +27,8 @@ export default async function Page({ params }: { params: { id: number } }) {
     return (
         <div className="flex mt-16 py-16 flex-wrap px-16 bg-gray-50">
             {
-                data.map((product) => (
-                    <div key={product.id}>
+                data.map((product ,index) => (
+                    <div key={index}>
                         <div className="flex justify-between gap-6 mb-16">
                             {/* Left hand Side */}
                             <div>
@@ -48,7 +48,7 @@ export default async function Page({ params }: { params: { id: number } }) {
                                     {/* Select Sizes */}
                                     {sizes.map((size) => {
                                         return (
-                                            <div key={product.id}>
+                                            <div key={index}>
                                                 <Button className="w-12 h-12 border duration-300 mt-2 hover:shadow-xl flex justify-center items-center rounded-full text-gray-500 bg-white ">{size}</Button>
                                             </div>
                                         )
