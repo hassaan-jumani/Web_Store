@@ -2,10 +2,14 @@ import ProductCart from "@/components/layout/ProductCart"
 import { Product } from '@/utils/type'
 import { client } from '@/../sanity/lib/client'
 
-const getProductsCategory = async (category:string) => {
-    const res = await client.fetch(`*[_type=='product' && category == "${category}"]`)
+const getProductsCategory = (category:string) => {
+    const res = client.fetch(`*[_type=='product' && category == "${category}"]`)
     return res
 }
+// async function getProductsCategory(category:string) {
+//     const res = await client.fetch(`*[_type=='product' && category == "${category}"]`)
+//     return res
+// }
 
 // export async function getProductsCategory({ params }: { params: { category: string } }) {
 //     const res = await client.fetch(`*[_type=='product' && category == "${params.category}"]`)
