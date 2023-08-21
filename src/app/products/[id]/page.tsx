@@ -1,11 +1,9 @@
 import Quantity from "@/components/Quantity"
-import { products } from "@/utils/mock"
 import Image from "next/image"
 import { Product } from '@/utils/type'
 import { Button } from "@/components/ui/button"
 import imageUrlBuilder from '@sanity/image-url'
 import { client } from '@/../sanity/lib/client'
-import { StaticImageData } from "next/image"
 
 export const getProductDetail = async (id:number) => {
     const res = await client.fetch(`*[_type=='product' && id == "${id}"]`)
