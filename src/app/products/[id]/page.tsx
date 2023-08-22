@@ -32,7 +32,10 @@ export default async function Page({ params }: { params: { id: number } }) {
                         <div className="flex justify-between gap-6 mb-16">
                             {/* Left hand Side */}
                             <div>
+                                {product.image &&
                                 <Image src={urlFor(product.image).url()}  alt={product.name} width={400} height={296}/>
+                                }
+                                
                             </div>
 
                             {/* Right Hand Side */}
