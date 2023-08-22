@@ -4,15 +4,22 @@ import {client} from '@/../sanity/lib/client'
 
 
 const getProductData = () => {
-  const res:any = client.fetch(`*[_type=='product']`)
+  const res = client.fetch(`*[_type=='product']{
+    name,
+    id,
+    category,
+    image,
+    price,
+    tagline,
+  }`)
   return res
 }
 
 
 const AllProducts = async () => {
-  const data:Product[] = []
-  data.push(await getProductData())
-  // const data:Product[] = await getProductData()
+  // const data:Product[] = []
+  // data.push(await getProductData())
+  const data:Product[] = await getProductData()
   console.log(data)
 
   return (
